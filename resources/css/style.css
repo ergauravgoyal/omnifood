@@ -15,12 +15,22 @@ Orange: #e67e22
 html {
   background-color: #fff;
   color: #555;
-  font-family: "Lato", "Arial", sans-serif; /*if Lato cann't be displayed than Arial, then if Arial is not available then any sans serif*/
+  font-family: 'Lato', 'Arial', sans-serif; /*if Lato cann't be displayed than Arial, then if Arial is not available then any sans serif*/
   font-weight: 300;
   font-size: 20px;
   text-rendering: optimizeLegibility;
 }
 
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: '.';
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
 /*----------------------------------------------*/
 /* REUSABLE COMPONENTS */
 /*----------------------------------------------*/
@@ -63,7 +73,7 @@ h2:after {
   display: block;
   height: 2px;
   background: #e67e22;
-  content: " ";
+  content: ' ';
   width: 100px;
   margin: 0 auto;
   margin-top: 30px;
@@ -94,6 +104,38 @@ h3 {
   color: #e67e22;
   margin-bottom: 10px;
 }
+
+.icon-small {
+  display:inline-block;
+  width: 30px;
+  text-align: center;
+  color: #e67e22;
+  font-size: 120%;
+  margin-right: 10px;
+  /* Secret to align text & icons */
+  line-height: 120%;
+  vertical-align: middle;
+  /* margin-top  -5px; */
+}
+
+/*----------LINKS ---------------- */
+
+a:link,a:visited{
+  color: #e67e22;
+  text-decoration: none; 
+  padding-bottom: 1px;
+  border-bottom: 1px solid #e67e22;
+}
+
+a:active,a:hover{
+  color: #555;
+  text-decoration: none; 
+  padding-bottom: 1px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s, color 0.2s;
+}
+
+
 /* ----------BUTTONS-------------- */
 .btn:link,
 .btn:visited {
@@ -140,7 +182,8 @@ h3 {
 /*----------------------------------------------*/
 
 header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/hero.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh; /* 100% of viewport */
@@ -151,7 +194,10 @@ header {
   width: 1140px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /*translate element to half of its width & height up & the left*/
+  transform: translate(
+    -50%,
+    -50%
+  ); /*translate element to half of its width & height up & the left*/
 }
 
 .logo {
@@ -192,8 +238,8 @@ header {
 /* FEATURES */
 /*----------------------------------------------*/
 
-.section-features .long-copy{
-    margin-bottom: 30px;
+.section-features .long-copy {
+  margin-bottom: 30px;
 }
 
 /*----------------------------------------------*/
@@ -231,4 +277,75 @@ header {
 .meal-photo img:hover {
   opacity: 1;
   transform: scale(1);
+}
+
+/*----------------------------------------------*/
+/* HOW IT WORKS */
+/*----------------------------------------------*/
+
+.section-steps {
+  background-color: #f4f4f4;
+}
+.steps-box:first-child {
+  text-align: right;
+  padding-right: 3%;
+  margin-top: 30px;
+}
+
+.steps-box:last-child {
+  padding-left: 3%;
+  margin-top: 70px;
+}
+
+.app-screen {
+  width: 40%;
+}
+
+.works-step {
+  margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+  margin-bottom: 80px;
+}
+.works-step div {
+  color: #e67e22;
+  border: 2px solid #e67e22;
+  /* display: inline-block; */
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  font-size: 150%;
+  padding: 5px;
+  float: left;
+  margin-right: 25px;
+}
+
+.btn-app img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.btn-app:link, .btn-link:visited{
+ border: 0;
+}
+
+/*----------------------------------------------*/
+/* CITIES */
+/*----------------------------------------------*/
+
+.cities-box {
+  padding: 1%;
+}
+
+.cities-box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.city-feature{
+ margin-bottom: 5px;
 }
